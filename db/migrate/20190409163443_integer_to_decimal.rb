@@ -1,0 +1,5 @@
+class IntegerToDecimal < ActiveRecord::Migration[5.1]
+  def change
+    change_column :entries, :quantity, :decimal
+  end
+end

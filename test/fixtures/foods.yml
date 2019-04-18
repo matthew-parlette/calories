@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Food One
+  unit_of_measure: piece
+  calories: 1
+
+two:
+  name: Food Two
+  unit_of_measure: oz
+  calories: 1

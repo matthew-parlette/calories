@@ -1,0 +1,42 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :plan_id %>
+    <%= form.text_field :plan_id, id: :entry_plan_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :food_id %>
+    <%= form.text_field :food_id, id: :entry_food_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :entry_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :default %>
+    <%= form.check_box :default, id: :entry_default %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hidden %>
+    <%= form.check_box :hidden, id: :entry_hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

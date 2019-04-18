@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan: one
+  food: one
+  quantity: 1
+
+two:
+  plan: two
+  food: two
+  quantity: 2

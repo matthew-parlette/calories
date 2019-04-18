@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Work Day
+  calories: 2400
+
+two:
+  name: Rest Day
+  calories: 1800

@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @plan.name %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @plan.calories %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <span id="calories">
+    -
+  </span>
+</p>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Calories</th>
+  </tr>
+  <% @plan.entries.each do |entry| %>
+  <tr class="entry">
+    <td><%= check_box_tag 'checked', entry.id, entry.default %></td>
+    <td><%= entry.food.name %></td>
+    <td style="display:none;" id="calories-per"><%= entry.food.calories %></td>
+    <td style="display:none;" id="protein-per"><%= entry.food.protein %></td>
+    <td style="display:none;" id="carbs-per"><%= entry.food.carbohydrates %></td>
+    <td style="display:none;" id="fat-per"><%= entry.food.fat %></td>
+    <td><%= text_field_tag 'quantity', entry.quantity %> <%= entry.food.unit_of_measure %></td>
+    <td id="calories">-</td>
+  </tr>
+  <% end %>
+  <tr class="additional-calories">
+    <td></td>
+    <td>Additional Calories</td>
+    <td></td>
+    <td><%= text_field_tag 'additional-calories', 0 %></td>
+  </tr>
+</table>
+
+<%# link_to 'Edit', edit_plan_path(@plan) %> |
+<%# link_to 'Back', plans_path %>
