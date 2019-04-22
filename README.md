@@ -17,7 +17,7 @@ $ docker build -t calories .
 ##### Development
 
 ```
-$ docker run -i -e RAILS_ENV=development -p 3000:3000 --name calories -t calories
+make run
 ```
 
 This will run the container in the foreground. If you would like to run this as a background job, remove the `-i` argument and hit CTRL+C to break out of the container output.
@@ -27,7 +27,7 @@ This will run the container in the foreground. If you would like to run this as 
 Production requires a SECRET_KEY_BASE to be provided as an environment variable. This can be generated with `rails secret`.
 
 ```
-$ docker run -i -e RAILS_ENV=production -e SECRET_KEY_BASE=whatever -e RAILS_SERVE_STATIC_FILES=true -p 3000:3000 --name calories -t calories
+$ docker run -i -e RAILS_ENV=production -e SECRET_KEY_BASE=whatever -p 3000:3000 --name calories -t calories
 ```
 
 In production, there are no users or admins by default, so you will need to create the first admin user:
